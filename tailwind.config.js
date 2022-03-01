@@ -11,7 +11,11 @@ module.exports = {
       },
       fontFamily: {
         'logo-font': ['"Shadows Into Light"'],
-        'overpass' : ['Overpass']
+        'overpass' : ['Overpass'],
+        'Architects-Daughter' : ['"Architects Daughter"'],
+        'Indie-Flower' : ['"Indie Flower"'],
+        'Patrick-Hand' : ['"Patrick Hand"'],
+
       }
     },
   },

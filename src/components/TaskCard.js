@@ -9,7 +9,7 @@ export const TaskCard = ({ todo ,todoState, index}) => {
   }
   return (
     <div className="p-4 bg-slate-900 pb-6 w-full lg:w-1/5 md:w-1/4 sm:w-1/3 flex flex-col bg-logo-color-50 border-2 rounded-md relative border-black">
-      <h4 className="text-slate-200 text-[18px] my-1 break-words">{todo.task}</h4>
+      <h4 className="text-slate-200 text-[18px] my-1 break-words font-Patrick-Hand tracking-wider text-xl">{todo.task}</h4>
       <div className="absolute bottom-0 right-0 p-1">
         <p className="text-sm text-slate-400">{todo.date}</p>
       </div>

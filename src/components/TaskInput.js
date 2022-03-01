@@ -7,7 +7,7 @@ const TaskInput = ({ todoState }) => {
   const [currentText, setcurrentText] = useState("");
   const addTodo = () => {
     if (currentText.length === 0) {
-      alert("KUCHH KARNA NHI HAI KYA?");
+      alert("Kuchh Karna Nhi hai Kya?");
       return;
     }
     setTodos([
@@ -24,7 +24,7 @@ const TaskInput = ({ todoState }) => {
   };
   return (
     <div className="flex flex-col items-center p-4">
-      <h1 className="font-overpass text-2xl p-2 m-2 font-bold ">
+      <h1 className="text-2xl p-2 m-2 font-bold font-Indie-Flower tracking-wider">
         Add Your Tasks here📝
       </h1>
       <textarea

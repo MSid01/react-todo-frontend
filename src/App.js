@@ -8,6 +8,14 @@ function App() {
   const today = new Date();
   const initialarray = [
     {
+      task: "Wake up early",
+      date: today.toLocaleString("en-us", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      }),
+    },
+    {
       task: "Start Your Day",
       date: today.toLocaleString("en-us", {
         day: "numeric",
