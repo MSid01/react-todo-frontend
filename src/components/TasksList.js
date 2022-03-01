@@ -6,8 +6,8 @@ const TasksList = ({todosList,todoState}) => {
     <>
     <h2 className="ml-[calc(10%_-_2rem)] text-xl mt-4 font-semibold tracking-wider"> 📌Your Tasks...🏃</h2>
     <div className=" mt-4 p-2 flex flex-wrap gap-5 justify-center">
-        {todosList.map((todo, index)=> <TaskCard key={index} todo={todo} index={index} todoState={todoState} />
-        )
+          {todosList.map((todo, index)=> <TaskCard key={index} todo={todo} index={index} todoState={todoState} />
+         )
         }
     </div>
     </>
