@@ -5,8 +5,8 @@ function Navbar() {
   return (
     <>
       <nav>
-        <ul className="flex justify-between bg-slate-900 p-3">
-          <li className="flex text-logo-color font-logo-font text-2xl font-bold tracking-wider">
+        <ul className="md:flex justify-between bg-slate-900 p-3">
+          <li className="flex mb-1 md:mb-0 text-logo-color font-logo-font text-2xl font-bold tracking-wider">
           <img className="w-10 h-10" src={todos} alt='todoicon'/>
           <a className='pt-1 pl-2' href='/'>TODO APP</a>
           </li>
