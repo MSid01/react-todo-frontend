@@ -17,10 +17,10 @@ function Navbar() {
               TODO APP
             </a>
           </li>
-          <div onClick={()=>setMenuToggle(!menuToggle)} className="sm:hidden absolute right-4 top-5">
+          <div onClick={()=>setMenuToggle(!menuToggle)} className="sm:hidden absolute cursor-pointer right-4 top-5">
             {
               menuToggle?
-              <span className="text-white font-semibold pr-1">X</span>:
+              <span className="text-white font-semibold pr-1 noselect">X</span>:
               <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
