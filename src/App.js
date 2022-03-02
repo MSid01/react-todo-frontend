@@ -47,9 +47,13 @@ function App() {
 
   const getTodoList=()=>{
     const list = localStorage.getItem("todoList");
-    if(list)
-    return JSON.parse(list);
-    else return initialarray;
+    if(list.length!==2)
+    {
+      return JSON.parse(list);
+    }
+    
+    else {
+      return initialarray};
   }
 
 
