@@ -30,6 +30,7 @@ const TaskInput = ({ todoState }) => {
         Add Your Tasks here📝
       </h1>
       <textarea
+        maxlength ="150"
         placeholder="Add something..."
         value={currentText}
         onChange={(e) => {
