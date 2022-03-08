@@ -7,7 +7,7 @@ const TasksList = ({ todosList, todoState }) => {
         {" "}
         📌Your Tasks...🏃
       </h2>
-      <div className=" mt-4 p-2 flex flex-wrap gap-5 justify-center">
+      <div className="mt-4 p-2 flex flex-wrap gap-5 justify-center">
           {todosList.map((todo, index) => (
             <TaskCard
             key={index}

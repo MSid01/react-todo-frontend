@@ -1,19 +1,39 @@
 import React from "react";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 const TaskInput = ({ todoState }) => {
   const today = new Date();
   const { todos, setTodos } = todoState;
   const [currentText, setcurrentText] = useState("");
   const addTodo = () => {
-    if (currentText.length === 0 || currentText.trim().length===0) {
-      alert("Kuchh Karna Nhi hai Kya?");
+    if (currentText.length === 0 || currentText.trim().length === 0) {
+      toast('Kuchh karna nhi hai kya🙄?', {
+
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+        toast('😏don\'t you wanna do anything!', {
+          position: "top-center",
+          autoClose: 5000,
+          delay:3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
       return;
     }
     setTodos([
       ...todos,
       {
-        id:todos.length+1,
+        id: todos.length + 1,
         task: currentText,
         date: today.toLocaleString("en-us", {
           day: "numeric",
@@ -25,12 +45,12 @@ const TaskInput = ({ todoState }) => {
     setcurrentText("");
   };
   return (
-    <div className="flex flex-col items-center p-4">
+    <div className="sticky top-0 z-10 bg-taskinputbg flex flex-col items-center p-4">
       <h1 className="text-2xl p-2 m-2 font-bold font-Indie-Flower tracking-wider">
         Add Your Tasks here📝
       </h1>
       <textarea
-        maxlength ="150"
+        maxlength="150"
         placeholder="Add something..."
         value={currentText}
         onChange={(e) => {
@@ -44,6 +64,17 @@ const TaskInput = ({ todoState }) => {
       >
         ADD
       </button>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 };

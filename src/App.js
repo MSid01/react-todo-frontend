@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import TaskInput from "./components/TaskInput";
 import TasksList from "./components/TasksList";
 import { useEffect, useState } from "react";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const today = new Date();
@@ -68,7 +69,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="bg-taskinputbg min-h-[91vh]">
+      <div className="">
         <TaskInput todoState={{ todos: todos, setTodos: setTodos }} />
         <TasksList
           todosList={todos}
