@@ -67,7 +67,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="scroll-smooth">
+      <div className="md:flex">
         <TaskInput todoState={{ todos: todos, setTodos: setTodos }} />
         <TasksList
           todosList={todos}

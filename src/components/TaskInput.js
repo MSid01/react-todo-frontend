@@ -46,7 +46,7 @@ const TaskInput = ({ todoState }) => {
     setcurrentText("");
   };
   return (
-    <div className="sticky top-[-20px] z-10 bg-taskinputbg flex flex-col items-center p-4">
+    <div className="md:w-2/4  sticky top-0 z-10 bg-taskinputbg flex flex-col items-center md:h-[80vh] p-4">
       <h1 className="text-2xl p-2 m-2 font-bold font-Indie-Flower tracking-wider">
         Add Your Tasks here📝
       </h1>

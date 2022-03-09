@@ -1,9 +1,12 @@
 import React from "react";
 import Swal from "sweetalert2";
+import { useMotionValue, Reorder, useDragControls } from "framer-motion";
+import { ReorderIcon } from "./Icon";
 
-export const TaskCard = ({ todo, todoState, index }) => {
+export const TaskCard = ({ todo, todoState, index, reorderState }) => {
   const { todos, setTodos } = todoState;
-
+  const y = useMotionValue(0);
+  const dragControls = useDragControls();
   const deleteTodo = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -47,17 +50,25 @@ export const TaskCard = ({ todo, todoState, index }) => {
     });
   };
   return (
-    <div className="p-4 bg-slate-900 pb-6 w-full lg:w-1/5 md:w-1/4 sm:w-1/3 flex flex-col bg-logo-color-50 border-2 rounded-md relative border-black">
+    <Reorder.Item
+       dragListener={false}
+      dragControls={dragControls}
+      value={todo}
+      id={todo}
+      className="p-4 bg-slate-900 pb-6 flex flex-col bg-logo-color-50 border-2 rounded-md relative border-black"
+      style={{ y }}
+    >
       <h4 className="text-slate-200 text-[18px] my-1 break-words font-Patrick-Hand tracking-wider text-xl">
         {todo.task}
       </h4>
       <div className="absolute bottom-0 right-0 p-1">
         <p className="text-sm text-slate-400">{todo.date}</p>
       </div>
-      <div className="absolute top-0 right-1">
-        <button
+      <div className="cursor-pointer absolute top-0 right-1 p-2 transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white focus:outline-none">
+      {reorderState ? <ReorderIcon dragControls={dragControls}/>
+       : <button
           onClick={deleteTodo}
-          className="flex items-center p-2  transition ease-in duration-200 uppercase rounded-full hover:bg-gray-800 hover:text-white focus:outline-none"
+          className="flex items-center"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +85,8 @@ export const TaskCard = ({ todo, todoState, index }) => {
             />
           </svg>
         </button>
+        }
       </div>
-    </div>
+    </Reorder.Item>
   );
 };
