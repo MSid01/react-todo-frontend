@@ -46,7 +46,7 @@ const TaskInput = ({ todoState }) => {
     setcurrentText("");
   };
   return (
-    <div className="sticky top-0 z-10 bg-taskinputbg flex flex-col items-center p-4">
+    <div className="sticky top-[-20px] z-10 bg-taskinputbg flex flex-col items-center p-4">
       <h1 className="text-2xl p-2 m-2 font-bold font-Indie-Flower tracking-wider">
         Add Your Tasks here📝
       </h1>
@@ -57,7 +57,7 @@ const TaskInput = ({ todoState }) => {
         onChange={(e) => {
           setcurrentText(e.target.value);
         }}
-        className="min-h-[60px] max-h-[160px] p-2 border-2 border-black rounded-sm sm:w-2/3 lg:w-2/4 w-3/4"
+        className="min-h-[60px] max-h-[160px] p-2 border-2 border-black rounded-md sm:w-2/3 lg:w-2/4 w-3/4"
       ></textarea>
       <button
         onClick={addTodo}

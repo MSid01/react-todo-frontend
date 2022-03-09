@@ -65,7 +65,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="">
+      <div className="scroll-smooth">
         <TaskInput todoState={{ todos: todos, setTodos: setTodos }} />
         <TasksList
           todosList={todos}
