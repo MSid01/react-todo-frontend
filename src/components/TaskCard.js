@@ -25,11 +25,13 @@ export const TaskCard = ({ todo, todoState, index }) => {
             padding: "3em",
             color: "#5d8bf4",
             background: "#f1f0ff",
+            imageUrl:
+              "https://media.giphy.com/media/WZkr0YCuLiCSBAQsym/giphy.gif",
+            imageWidth: 300,
+            imageHeight: 300,
+            imageAlt: "Custom image",
             backdrop: `
             #0f172ac4
-            url("https://media.giphy.com/media/JRsQiAN79bPWUv43Ko/giphy.gif")
-            left top
-            no-repeat
           `,
           });
         } else {
