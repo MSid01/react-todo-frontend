@@ -18,13 +18,29 @@ export const TaskCard = ({ todo, todoState, index }) => {
       if (result.isConfirmed) {
         todos.splice(index, 1);
         setTodos([...todos]);
-        Swal.fire({
-          title: "Deleted!",
-          text: "Your file has been deleted.",
-          icon: "success",
-          background: "#f1f0ff",
-          confirmButtonColor:"#5d8bf4"
-        });
+        if (todos.length === 0) {
+          Swal.fire({
+            title: "Hooray🎉You have completed your all tasks🎇",
+            width: 600,
+            padding: "3em",
+            color: "#5d8bf4",
+            background: "#f1f0ff",
+            backdrop: `
+            #0f172ac4
+            url("https://media.giphy.com/media/JRsQiAN79bPWUv43Ko/giphy.gif")
+            left top
+            no-repeat
+          `,
+          });
+        } else {
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your Task has been deleted.",
+            icon: "success",
+            background: "#f1f0ff",
+            confirmButtonColor: "#5d8bf4",
+          });
+        }
       }
     });
   };

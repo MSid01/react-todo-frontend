@@ -57,7 +57,9 @@ function App() {
   };
 
   const [todos, setTodos] = useState(getTodoList());
-  // if (todos.length === 0) setTodos([...initialarray]);
+  if (todos.length === 0) {
+    setTodos([...initialarray])
+  };
   useEffect(() => {
     localStorage.setItem("todoList", JSON.stringify(todos));
   }, [todos]);
