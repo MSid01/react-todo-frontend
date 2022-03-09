@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 const TaskInput = ({ todoState }) => {
   const today = new Date();
@@ -9,7 +9,7 @@ const TaskInput = ({ todoState }) => {
   const addTodo = () => {
     if (currentText.length === 0 || currentText.trim().length === 0) {
       toast('Kuchh karna nhi hai kya🙄?', {
-
+        toastId:"kuchh karna nhi hai",
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -19,6 +19,7 @@ const TaskInput = ({ todoState }) => {
         progress: undefined,
         });
         toast('😏don\'t you wanna do anything!', {
+          toastId:"don't you wanna do anything",
           position: "top-center",
           autoClose: 5000,
           delay:3000,
@@ -50,7 +51,7 @@ const TaskInput = ({ todoState }) => {
         Add Your Tasks here📝
       </h1>
       <textarea
-        maxlength="150"
+        maxLength="150"
         placeholder="Add something..."
         value={currentText}
         onChange={(e) => {
@@ -64,17 +65,6 @@ const TaskInput = ({ todoState }) => {
       >
         ADD
       </button>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
     </div>
   );
 };

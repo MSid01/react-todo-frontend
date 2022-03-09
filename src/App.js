@@ -4,12 +4,13 @@ import TaskInput from "./components/TaskInput";
 import TasksList from "./components/TasksList";
 import { useEffect, useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const today = new Date();
   const initialarray = [
     {
-      id:1,
+      id: 1,
       task: "Wake up early",
       date: today.toLocaleString("en-us", {
         day: "numeric",
@@ -18,7 +19,7 @@ function App() {
       }),
     },
     {
-      id:2,
+      id: 2,
       task: "Start Your Day",
       date: today.toLocaleString("en-us", {
         day: "numeric",
@@ -27,7 +28,7 @@ function App() {
       }),
     },
     {
-      id:3,
+      id: 3,
       task: "Add your tasks",
       date: today.toLocaleString("en-us", {
         day: "numeric",
@@ -36,7 +37,7 @@ function App() {
       }),
     },
     {
-      id:4,
+      id: 4,
       task: "Reach your goals",
       date: today.toLocaleString("en-us", {
         day: "numeric",
@@ -46,25 +47,20 @@ function App() {
     },
   ];
 
-  const getTodoList=()=>{
+  const getTodoList = () => {
     const list = localStorage.getItem("todoList");
-    if(list.length!==2)
-    {
+    if (list != null && list.length !== 2) {
       return JSON.parse(list);
+    } else {
+      return initialarray;
     }
-    
-    else {
-      return initialarray};
-  }
-
+  };
 
   const [todos, setTodos] = useState(getTodoList());
   // if (todos.length === 0) setTodos([...initialarray]);
-  useEffect(
-    ()=>{
-      localStorage.setItem("todoList", JSON.stringify(todos))
-    },[todos]
-  )
+  useEffect(() => {
+    localStorage.setItem("todoList", JSON.stringify(todos));
+  }, [todos]);
 
   return (
     <>
@@ -76,6 +72,18 @@ function App() {
           todoState={{ todos: todos, setTodos: setTodos }}
         />
       </div>
+      <ToastContainer
+        theme="dark"
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </>
   );
 }
